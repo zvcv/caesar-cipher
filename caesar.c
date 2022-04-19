@@ -16,30 +16,28 @@ int main(void)
     printf("Difference: ");
     scanf("%i", &diff);
 
-    if (diff >= 26)
-    {
-        diff %= 26;
-    }
-
-    printf("diff = %i\n", diff);
-    // printf("strlen = %i\n", strlen(inputt));
-    printf("strlen = %i\n", inputt[0]);
-
     for (int i = 0; i < strlen(inputt); i++)
     {
         if (inputt[i] >= 97 && inputt[i] <= 122)
         {
-            printf("lo %i\n", (inputt[i] - (95 + diff)));
-            printf("%c", alpha_low[(inputt[i] - (95 - diff))]);
+            int x = inputt[i] - (97 - diff);
+            if (x > 26)
+            {
+                x %= 26;
+            }
+            printf("%c", alpha_low[x]);
         }
         else if (inputt[i] >= 65 && inputt[i] <= 90)
         {
-            printf("up %i\n", (inputt[i] - (63 + diff)));
-            printf("%c", alpha_up[(inputt[i] - (63 - diff))]);
+            int y = inputt[i] - (65 - diff);
+            if (y > 26)
+            {
+                y %= 26;
+            }
+            printf("%c", alpha_up[y]);
         }
         else
         {
-            printf("no %i\n", i);
             printf("%c", inputt[i]);
         }
     }
@@ -48,29 +46,3 @@ int main(void)
 
     return 0;
 }
-
-// for (int i = 0; i < length; i++)
-// {
-//     if (inputt[i] >= 97 && inputt[i] <= 122)
-//     {
-//         int x = inputt[i] - (97 - diff);
-//         if (x >= 26)
-//         {
-//             x %= 26;
-//         }
-//         printf("%c", alpha_low[x]);
-//     }
-//     else if (inputt[i] >= 65 && inputt[i] <= 90)
-//     {
-//         int y = inputt[i] - (65 - diff);
-//         if (y > 26)
-//         {
-//             y %= 26;
-//         }
-//         printf("%c", alpha_up[y]);
-//     }
-//     else
-//     {
-//         printf("%c", inputt[i]);
-//     }
-// }
