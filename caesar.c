@@ -13,8 +13,10 @@ int main(void)
     printf("Input Message: ");
     scanf("%[^\n]%*c", inputt);
 
-    printf("Difference: ");
+    printf("Difference   : ");
     scanf("%i", &diff);
+
+    printf("Cesar Ciper  : ");
 
     for (int i = 0; i < strlen(inputt); i++)
     {
